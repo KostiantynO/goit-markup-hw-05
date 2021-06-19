@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2196f3" />
     <meta
       name="description"
-      content="Studio - showcases WebStudio's index page with features, activities and team. The site is a Training project of the GoIT student participating in FullStack Dev online course"
+      content="Studio - showcases WebStudio's index page with features, activities, team. The site is a Training project of the GoIT student of FullStack Dev online course"
     />
+
+    <style>
+      .list:empty::after {
+        content: attr(data-placeholder);
+      }
+    </style>
 
     <link
       href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.min.css"
@@ -61,8 +68,8 @@
         <div class="header-contacts-container">
           <ul class="header-contacts-list list 💪">
             <li class="header-contact-list-item">
-              <a class="header-contact links" href="mailto:info@devstudio.com">
-                <svg class="header-contact-icon" width="16" height="12">
+              <a class="header-contact links 💪" href="mailto:info@devstudio.com">
+                <svg class="header-contact-icon icon-envelope" width="16" height="12">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-envelope"></use>
                 </svg>
 
@@ -72,7 +79,7 @@
 
             <li class="header-contact-list-item">
               <a class="header-contact links 💪" href="tel:+380961111111">
-                <svg class="header-contact-icon" width="10" height="16">
+                <svg class="header-contact-icon icon-smartphone" width="10" height="16">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-smartphone"></use>
                 </svg>
 
@@ -166,7 +173,7 @@
           <h2 class="section-title activities-title">Чем мы занимаемся</h2>
           <!-- Сжатые *.jpg активностей -->
           <ul class="activities-list list 💪" data-placeholder="Заполнитель">
-            <li class="activity-list-item">
+            <li class="activity-list-item 💪">
               <img
                 class="image"
                 src="./images/squooshed/activities/activity-1.jpg"
@@ -174,9 +181,11 @@
                 width="370"
                 height="294"
               />
+
+              <p class="activity-list-label">Десктопные приложения</p>
             </li>
 
-            <li class="activity-list-item">
+            <li class="activity-list-item 💪">
               <img
                 class="image"
                 src="./images/squooshed/activities/activity-2.jpg"
@@ -184,9 +193,11 @@
                 width="370"
                 height="294"
               />
+
+              <p class="activity-list-label">Мобильные приложения</p>
             </li>
 
-            <li class="activity-list-item">
+            <li class="activity-list-item 💪">
               <img
                 class="image"
                 src="./images/squooshed/activities/activity-3.jpg"
@@ -194,6 +205,8 @@
                 width="370"
                 height="294"
               />
+
+              <p class="activity-list-label">Дизайнерские решения</p>
             </li>
           </ul>
         </div>

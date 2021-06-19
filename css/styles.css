@@ -2,7 +2,8 @@
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
 :root {
-  --font-family-sans-serif: Roboto, "Open Sans", Arial, Helvetica, sans-serif;
+  --body-sans-serif: Roboto, sans-serif;
+  --logo-sans-serif: "Raleway", sans-serif;
 
   /* || ----------------- START "ПАЛИТРА" ----------------- */
   --color-bg-skip-to-content: #bf1722;
@@ -123,12 +124,12 @@ li,
 /* END "Обнуление" */
 
 /* Главная */
-.💪 {
+body .💪 {
   display: flex;
 }
 
 body {
-  font-family: var(--font-family-sans-serif);
+  font-family: var(--body-sans-serif);
   color: var(--color-text-primary);
   letter-spacing: 0.03em;
   background-color: var(--color-white);
@@ -197,16 +198,12 @@ body {
   list-style: none;
 }
 
-.list:empty::after {
-  content: attr(data-placeholder);
-}
-
 .image {
   display: block;
 }
 
 .links {
-  /* display: inline-block; */
+  display: inline-block;
   color: inherit;
   text-decoration: none;
 }
@@ -254,29 +251,17 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 .page-header {
   min-width: 370px;
-  padding-top: 24px;
-  padding-bottom: 25px;
-}
+  padding: 24px 0;
 
-/* Декоративная линия под шапкой сайта */
-.page-header::after {
-  position: absolute;
-  top: 80px;
-  min-width: 100%;
-  max-height: 0;
-  content: "";
-
-  border-bottom: 1px solid var(--color-header-decoration-line); /* Line */
+  border-bottom: 1px solid var(--color-header-decoration-line); /* Line - Декор линия*/
 }
 
 .header-container {
   flex-flow: row wrap;
-  align-items: center;
 }
 
 .header-nav {
   flex-flow: row wrap;
-  align-items: center;
 }
 
 /*
@@ -292,9 +277,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .logo {
   display: inline-flex;
   flex-flow: row nowrap;
-  align-items: center;
 
-  font-family: Raleway;
+  font-family: var(--logo-sans-serif);
   font-size: 26px;
   font-style: normal;
   font-weight: 700;
@@ -335,34 +319,35 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11 */
 .nav-link,
 .header-contact {
-  position: relative;
   padding-top: 7px;
   padding-bottom: 8px;
-
   font-size: 14px;
   font-weight: 500;
-  line-height: 1.15; /* 16px */
+  line-height: 1.14; /* 16px */
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
 /* Студия, Портфолио, Контакты */
 .nav-link {
+  position: relative;
   color: var(--color-text-primary);
 }
 
+/* hover */
 .nav-link[aria-current="page"]::after {
   position: absolute;
   top: 52px;
   left: 0;
   z-index: 21;
+
   min-width: 100%;
-  min-height: 5px;
+  min-height: 4px;
 
   content: "";
 
   background-color: var(--color-accent);
-  border-radius: 21px;
+  border-radius: 2px;
 }
 
 /* END "Главная навигация сайта" */
@@ -386,13 +371,20 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .header-contact {
+  flex-flow: row wrap;
   align-items: center;
   color: var(--color-text-secondary);
 }
 
 .header-contact-icon {
+  display: inline-block;
   margin-right: 10px;
   fill: currentColor;
+}
+
+.icon-envelope {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 /* END "Шапка сайта - Контакты" */
@@ -647,9 +639,10 @@ main > .activities {
   padding-top: 47px;
 }
 
+/* .activities-title { } */
+
 .activities-list {
   flex-flow: row wrap;
-  align-items: center;
   justify-content: center;
 
   margin-top: calc(-1 * var(--uni-margin));
@@ -657,12 +650,34 @@ main > .activities {
 }
 
 .activity-list-item {
+  position: relative;
+
   flex-basis: calc(100% / var(--cards-per-line-small) - var(--uni-margin));
+  justify-content: center;
 
   margin-top: var(--uni-margin);
   margin-left: var(--uni-margin);
 }
-/* .activities-title { } */
+
+/* Десктопные приложения, Мобильные приложения, Дизайнерские решения */
+.activity-list-label {
+  position: absolute; /* label */
+  bottom: 0;
+  width: 100%;
+
+  padding: 27px 0;
+
+  /* Наследует от body - font-family: Roboto; letter-spacing: 0.03em; */
+  /* Наследует от браузера - font-style: normal; */
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.17;
+  color: var(--color-white);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
 /* ------------------------------------------------------ */
 /* || ------------- END "ЧЕМ МЫ ЗАНИМАЕМСЯ" ------------- */
 /* ------------------------------------------------------ */
