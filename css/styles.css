@@ -1,96 +1,54 @@
 /* ------------------------------------------------------ */
 /* || --------------- START "ПЕРЕМЕННЫЕ" ---------------- */
 /* ------------------------------------------------------ */
-:root {
-  --body-sans-serif: Roboto, sans-serif;
-  --logo-sans-serif: "Raleway", sans-serif;
 
+:root {
   /* || ----------------- START "ПАЛИТРА" ----------------- */
-  --color-bg-skip-to-content: #bf1722;
-  --color-text-primary: #212121; /* Основной цвет текста #212121 (nav-link, h2, h3, filters-btn) */
+  --color-text-primary: #212121; /* Основной текст #212121 (nav, h2, h3, filters-btn) */
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
-  --color-accent: #2196f3; /* Акцент #2196F3 */
-  --color-hero-btn-hover: #188ce8; /* Цвет Кнопки-героя при фокусе */
+  --color-accent: #2196f3; /* Акцент #2196F3, "Web" в Лого */
   --color-bg-hero: #2f303a;
   --color-bg-section-grey: #f5f4fa;
   --color-bg-project-card: #eeeeee;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-header-decoration-line: #ececec;
+  --color-white: #ffffff; /* h1, portfolio-name& */
   --color-icon: #afb1b8;
-  --color-bg-icon-footer: rgba(255, 255, 255, 0.1);
-
-  /* Тень Главной кнопки (статическая) и Вторичной кнопки (динамическая - по наведению/при фокусе) */
-  --box-shadow-filter-btn: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
-    0 2px 2px rgba(0, 0, 0, 0.12);
-
-  /* Тень Карточки дизайнера (статическая) - material shadow v1 */
-  --box-shadow-designer-card: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
-    0 2px 1px rgba(0, 0, 0, 0.2);
-
-  --box-shadow-hero-btn: 0 4px 4px rgba(0, 0, 0, 0.15); /* Тень Кнопки-героя (статическая) */
-
-  --color-footer-contacts: rgba(255, 255, 255, 0.6);
   /* || ------------------ END "ПАЛИТРА" ------------------ */
 
-  /* || ------------- START "ОТСТУПЫ СТУДИИ" -------------- */
-  --max-width-container: 1200px; /* Макс. ширина контейнера */
-  --padding-container: 0 15px; /* Отдаляет текст от границы экрана */
-  --min-width-activity-image: 370px;
-  --uni-margin: 30px; /* Универсальное значение высоты и отступов */
-  --flex-margins-top-and-left: var(--uni-margin) 0 0 var(--uni-margin);
+  /* || ----------------- START "ОТСТУПЫ" ----------------- */
+  --uni-margin: 30px; /* Универсальное значение высоты и отступов, нижний отступ у H1 */
 
-  /* Хедер-Лого */
-  --margin-right-logo-container: 93px; /* Правый отступ между Лого и навигацией */
-
-  /* Хедер-"Главная навигация", Хедер-Контакты, Герой */
-  /* Правый отступ между ссылками Главной навигации */
-  /* Правый отступ между ссылками Контактов */
+  /* Правый отступ между ссылками Главной навигации в Хедере */
+  /* Правый отступ между ссылками Контактов в Хедере */
   /* Нижний отступ между заголовком h2 и секциями "Чем мы занимаемся" и "Наша команда" */
   /* Нижний отступ между Фильтрами-кнопками и карточками Проектов */
-  --universal--margin-large: 50px;
+  --uni-margin-big: 50px;
 
-  /* Футер-Адрес, Футер-Соц-ссылки */
-  /* Верхний отступ между адресом и Лого */
-  /* Левый отступ между контейнерами ссылок на соц. сети и адресом */
-  --universal--margin-small: 20px;
+  /* Верхний отступ между адресом и Лого в Футере */
+  /* Левый отступ между контейнерами ссылок на соц. сети и адресом в Футере */
+  --uni-margin-small: 20px;
 
-  /* "Наша команда"-"Карточки Дизайнеров", Особенности */
   /* Нижний отступ между именем и ролью дизайнера */
-  /* Нижний отступ между Оглавлением h3 и параграфом */
-  --universal--margin-minimum: 10px;
+  /* Нижний отступ между оглавлением (h3) и параграфом Особенностей */
+  --uni-margin-min: 10px;
 
   /* Постоянные клиенты */
-  --cards-per-line-big: 6;
+  --cards-per-line-6: 6;
 
-  /* Особенности, "Наша команда"-"Карточки Дизайнеров" */
   /* Кол-во карточек Особенностей на одной линии. */
   /* Кол-во карточек Дизайнеров на одной линии. */
-  --cards-per-line-medium: 4;
+  --cards-per-line-4: 4;
 
-  /* "Чем мы занимаемся", Портфолио-"Карточки Проектов" */
   /* Кол-во карточек Активностей на одной линии. */
   /* Количество карточек Проектов на одной линии во флекс-сетке. */
-  --cards-per-line-small: 3;
+  --cards-per-line-3: 3;
 
-  /* Футер-Адрес */
-  --margin-bottom-footer-address-list-item: 9px; /* Нижний отступ между ссылками в адресе */
+  --max-height-project-title: 110px;
+  /* || ------------------ END "ОТСТУПЫ" ------------------ */
 
-  /* Футер-Соц-ссылки */
-  --margin-right-footer-social-list-item: 21px; /* Правый отступ между ссылками на соц. сети */
-  /* || -------------- END "ОТСТУПЫ СТУДИИ" --------------- */
-
-  /* || ------------ START "ОТСТУПЫ ПОРТФОЛИО" ------------ */
-  /* Портфолио-Фильтры-кнопки */
-  --margin-top-portfolio-filter: 15px; /* Верхний отступ между фильтрами-кнопками */
-  --margin-left-portfolio-filter: 8px; /* Левый отступ между фильтрами-кнопками */
-
-  /* Макс. ширина карточки Проектов */
-  --flex-basis-portfolio-card: calc(100% / var(--cards-per-line-small) - var(--uni-margin));
-
-  /* Постоянные клиенты */
-  --flex-basis-client-card: calc(100% / var(--cards-per-line-big) - var(--uni-margin));
-  /* || ------------- END "ОТСТУПЫ ПОРТФОЛИО" ------------- */
+  /* || ---------------- START "АНИМАЦИЯ" ----------------- */
+  --duration: 250ms;
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  /* || ----------------- END "АНИМАЦИЯ" ------------------ */
 }
 /* ------------------------------------------------------ */
 /* || ---------------- END "ПЕРЕМЕННЫЕ" ----------------- */
@@ -99,6 +57,15 @@
 /* ------------------------------------------------------ */
 /* || ------------- START "ОБЩИЕ НАСТРОЙКИ" ------------- */
 /* ------------------------------------------------------ */
+html {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
 
 /* START "Обнуление" */
 body,
@@ -124,36 +91,40 @@ li,
 /* END "Обнуление" */
 
 /* Главная */
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.71; /* h24px */
+  color: var(--color-text-primary); /* #212121 */
+  letter-spacing: 0.03em;
+
+  background-color: var(--color-white);
+}
+
 body .💪 {
   display: flex;
 }
 
-body {
-  font-family: var(--body-sans-serif);
-  color: var(--color-text-primary);
-  letter-spacing: 0.03em;
-  background-color: var(--color-white);
-}
-
 .skip-to-content > .skip-link {
   position: absolute;
-  top: -40px;
+  top: -43px;
   left: 0;
   z-index: 100;
 
   padding: 6px;
 
   color: var(--color-white);
-  background-color: var(--color-bg-skip-to-content);
+  background-color: #bf1722;
 
   border-right: 1px solid var(--color-white);
   border-bottom: 1px solid var(--color-white);
   border-bottom-right-radius: 8px;
 
-  -webkit-transition: top 1s ease-out;
-  -moz-transition: top 1s ease-out;
-  -o-transition: top 1s ease-out;
-  transition: top 1s ease-out;
+  -webkit-transition: top var(--duration) var(--timing-function);
+  -moz-transition: top var(--duration) var(--timing-function);
+  -o-transition: top var(--duration) var(--timing-function);
+  transition: top var(--duration) var(--timing-function);
 }
 
 .skip-to-content > .skip-link:focus {
@@ -162,36 +133,26 @@ body {
   left: 0;
 
   outline-color: transparent;
-
-  -webkit-transition: top 0.1s ease-in;
-  -moz-transition: top 0.1s ease-in;
-  -o-transition: top 0.1s ease-in;
-  transition: top 0.1s ease-in;
 }
 
 .container {
-  min-width: var(--min-width-activity-image); /* Мин. ширина картинки активности */
-  max-width: var(--max-width-container);
-  padding: var(--padding-container);
-  margin: 0 auto;
+  min-width: 290px; /* Мин. шир. контейнера */
+  max-width: 1200px; /* Макс. ширина контейнера */
+  padding: 0 15px; /* Отдаляет от границы экрана */
+  margin: 0 auto; /* Центрирует по ширине */
 }
 
 .section {
-  min-width: 370px;
   padding-top: 94px;
   padding-bottom: 94px;
 }
 
-/* Чем мы занимаемся, Наша команда */
+/* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
 .section-title {
-  margin-bottom: var(--universal--margin-large);
-
-  /* Наследует от body - font-family: Roboto; */
-  /* Наследует от браузера - font-weight: 700; font-style: normal; */
+  margin-bottom: var(--uni-margin-big);
   font-size: 36px;
-  line-height: 1.17; /* 42px */
-  color: var(--color-text-primary); /* Primary text color #212121 */
-  text-align: center;
+  line-height: 1.17; /* 42.19px */
+  text-align: center; /* from body color: #212121; from h2 = font-weight: 700; */
 }
 
 .list {
@@ -204,38 +165,48 @@ body {
 
 .links {
   display: inline-block;
+
   color: inherit;
   text-decoration: none;
+
+  transition: color var(--duration) var(--timing-function);
 }
 
-/* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг" */
+/* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
 .btn {
   display: inline-block;
+
   min-height: 38px;
-  padding: 6px 22px;
+  padding-right: 22px;
+  padding-left: 22px;
 
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.62; /* 38px = box height */
+  line-height: 2.38; /* 38px = Increased LH from 26px to box */
   letter-spacing: inherit;
 
   cursor: pointer;
-
   border: none;
   border-radius: 4px;
+  /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; Hover Focus from .btn--secondary */
 }
 
 /* Главная кнопка: фон - акцент,  цвет - белый #ffffff. + тень статическая */
 .btn--primary {
   color: var(--color-white); /* Белый #FFFFFF */
   background-color: var(--color-accent); /* Акцент #2196F3 */
-  box-shadow: var(--box-shadow-filter-btn); /* shadow-middle */
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12); /* Тень Главной кнопки (статическая) shadow-middle */
 }
 
 /* Вторичная кнопка: Фон - серый #f5f4fa,  цвет - темный #212121, + тень динамическая по ховеру */
 .btn--secondary {
   color: var(--color-text-primary);
-  background-color: var(--color-bg-section-grey);
+  background-color: var(--color-bg-section-grey); /* Rectangle 10 */
+
+  transition: color var(--duration) var(--timing-function),
+    background-color var(--duration) var(--timing-function),
+    box-shadow var(--duration) var(--timing-function);
 }
 /* ------------------------------------------------------ */
 /* || -------------- END "ОБЩИЕ НАСТРОЙКИ" -------------- */
@@ -245,15 +216,10 @@ body {
 /* || --------------- START "ШАПКА САЙТА" --------------- */
 /* ------------------------------------------------------ */
 
-/* Структура шапки:
-page-header > header-container > header-nav > (logo + nav-menu) ^ +
-                               + header-contacts-container > (header-contacts-list) */
-
 .page-header {
-  min-width: 370px;
   padding: 24px 0;
 
-  border-bottom: 1px solid var(--color-header-decoration-line); /* Line - Декор линия*/
+  border-bottom: 1px solid #ececec; /* Line - Декор линия*/
 }
 
 .header-container {
@@ -268,25 +234,25 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
  *
 */
 
-/* START "Ссылка-логотип WebStudio" */
-
+/* START "Лого-ссылка WebStudio" */
 .logo-container {
-  margin-right: var(--margin-right-logo-container);
+  margin-right: 93px; /* Правый отступ у Лого */
 }
 
 .logo {
-  display: inline-flex;
+  display: inline-flex; /* WebStudio width: 145px; height: 31px; */
   flex-flow: row nowrap;
 
-  font-family: var(--logo-sans-serif);
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.2; /* 31px = box height */
+  font-family: "Raleway", sans-serif;
+  font-size: 26px; /* Web inherits color: #2196F3; from .accent */
+  font-weight: 700; /* Studio inherits color: #000000; from .black */
+  line-height: 1.19; /* 31px = box */
 }
 
 .webstudio {
   min-height: 26px;
+
+  transition: color var(--duration) var(--timing-function);
 }
 
 .white {
@@ -294,10 +260,9 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .black {
-  color: var(--color-black);
+  color: #000000; /* "Studio" в Лого */
 }
-
-/* END "Ссылка-логотип WebStudio" */
+/* END "Лого-ссылка WebStudio" */
 
 /*
  *
@@ -307,34 +272,34 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .nav-menu {
   flex-flow: row wrap;
   align-items: center;
-  color: var(--color-text-primary);
 }
 
 /* .nav-menu-item { } */
 
 .nav-menu-item:not(:last-child) {
-  margin-right: var(--universal--margin-large);
+  margin-right: var(--uni-margin-big);
 }
 
-/* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11 */
+/* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11, h16px */
 .nav-link,
 .header-contact {
   padding-top: 7px;
   padding-bottom: 8px;
-  font-size: 14px;
+
   font-weight: 500;
-  line-height: 1.14; /* 16px */
+  line-height: 1.14; /* 16px, color: #2196f3; Hover Focus */
   letter-spacing: 0.02em;
+
   white-space: nowrap;
 }
 
 /* Студия, Портфолио, Контакты */
 .nav-link {
-  position: relative;
-  color: var(--color-text-primary);
+  position: relative; /* inherits color: #212121; */
 }
 
 /* hover */
+.current-link::after,
 .nav-link[aria-current="page"]::after {
   position: absolute;
   top: 52px;
@@ -367,7 +332,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 }
 
 .header-contact-list-item:not(:last-child) {
-  margin-right: var(--universal--margin-large);
+  margin-right: var(--uni-margin-big);
 }
 
 .header-contact {
@@ -386,7 +351,6 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
   margin-top: 2px;
   margin-bottom: 2px;
 }
-
 /* END "Шапка сайта - Контакты" */
 
 /*
@@ -464,6 +428,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 
 /* START Подсветка ссылок */
 .accent,
+.current-link,
 [aria-current="page"],
 .links:hover,
 .links:focus,
@@ -472,6 +437,8 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 .logo:focus .webstudio,
 .logo:active .webstudio {
   color: var(--color-accent); /* Акцент #2196F3 */
+
+  transition: color var(--duration) var(--timing-function);
 }
 /* END Подсветка ссылок */
 /* ------------------------------------------------------ */
@@ -483,6 +450,7 @@ page-header > header-container > header-nav > (logo + nav-menu) ^ +
 /* ------------------------------------------------------ */
 main > .hero {
   max-width: 1600px;
+
   padding-top: 200px;
   padding-bottom: 200px;
   margin: 0 auto;
@@ -506,11 +474,8 @@ main > .hero {
 .hero-title-container {
   flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
-
-  width: 696px;
   min-height: 120px;
-  margin-bottom: var(--uni-margin); /* Нижний отступ между Заголовком h1 и Кнопкой-Героем */
+  margin-bottom: var(--uni-margin);
 }
 
 .hero-title-br {
@@ -533,28 +498,28 @@ main > .hero {
 
 /* START Hero-Button */
 
-/* Заказать услугу */
+/* Заказать услугу h30px */
 .hero-container > .hero-btn {
   min-width: 200px;
   min-height: 50px;
 
-  /* Наследует от body: font-family: Roboto; */
-  /* Наследует от браузера: font-style: normal; font-size: 16px; */
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.87; /* = box height 30px, or 187% */
+  line-height: 1.88; /* 30px = box */
   letter-spacing: 0.06em;
-  white-space: nowrap;
+  white-space: nowrap; /* in normal state from btn--primary - bg background-color: #2196f3; */
 
-  border-radius: 4px;
-  box-shadow: var(--box-shadow-hero-btn); /* Тень для Кнопки-героя (статическая) */
+  border-radius: 4px; /* from btn--primary color: #ffffff; */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15); /* Тень для Кнопки-героя (статическая) */
+
+  transition: background-color var(--duration) var(--timing-function);
 }
 
 /* Hero-Button (Hover) */
 .hero-container > .hero-btn:focus,
 .hero-container > .hero-btn:hover,
 .hero-container > .hero-btn:active {
-  background-color: var(--color-hero-btn-hover); /* #188ce8 */
+  background-color: #188ce8; /* Цвет Кнопки-героя при фокусе #188ce8 */
 }
 
 /* END Hero-Button */
@@ -570,9 +535,7 @@ main > .features {
   padding-bottom: 47px;
 }
 
-/* Особенности */
-/* .features-container { } */
-
+/* Особенности */ /* .features-container { } */
 .features-list {
   flex-flow: row wrap;
   align-items: center;
@@ -583,7 +546,7 @@ main > .features {
 }
 
 .feature-list-item {
-  flex-basis: calc(100% / var(--cards-per-line-medium) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
   margin-top: var(--uni-margin);
   margin-left: var(--uni-margin);
 }
@@ -600,31 +563,26 @@ main > .features {
   border-radius: 4px;
 }
 
-/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии */
+/* Внимание к деталям, Пунктуальность, Планирование, Современные технологии, h16.41px */
 .feature-heading {
-  margin-bottom: var(--universal--margin-minimum);
+  margin-bottom: var(--uni-margin-min);
 
-  font-size: 14px;
-  line-height: 1.15; /* 16px */
-  color: var(--color-text-primary);
+  font-size: inherit; /* from body font-size: 14px; color: #212121; */
+  line-height: 1.17; /* from h3 font-weight: 700; */
   text-transform: uppercase;
 }
 
+/*Идейные соображения, а также начало повседневной работы по формированию позиции.
+Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
+Равным образом консультация с широким активом в значительной степени обуславливает.
+Значимость этих проблем настолько очевидна, что реализация плановых заданий. w270px, h75px */
 .feature-paragraph {
   min-width: 270px;
   min-height: 75px;
+
+  color: var(--color-text-secondary); /* #757575 */ /* from browser font-weight: 400; */
 }
 
-/* В параграфе ".feature-paragraph" и в ".footer-contacts" - одинаковый шрифт, разный цвет */
-
-/* Идейные соображения, а также начало повседневной работы по формированию позиции. */
-.secondary-text-font {
-  /* Наследует от body: font-family: Roboto; */
-  /* Наследует от браузера: font-style: normal; font-weight: 400; */
-  font-size: 14px;
-  line-height: 1.71; /* 24px */
-  color: var(--color-text-secondary);
-}
 /* ------------------------------------------------------ */
 /* || ---------------- END "ОСОБЕННОСТИ" ---------------- */
 /* ------------------------------------------------------ */
@@ -652,29 +610,27 @@ main > .activities {
 .activity-list-item {
   position: relative;
 
-  flex-basis: calc(100% / var(--cards-per-line-small) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
   justify-content: center;
 
   margin-top: var(--uni-margin);
   margin-left: var(--uni-margin);
 }
 
-/* Десктопные приложения, Мобильные приложения, Дизайнерские решения */
+/* Десктопные приложения, Мобильные приложения, Дизайнерские решения height: 16px; */
 .activity-list-label {
   position: absolute; /* label */
   bottom: 0;
   width: 100%;
 
-  padding: 27px 0;
-
-  /* Наследует от body - font-family: Roboto; letter-spacing: 0.03em; */
-  /* Наследует от браузера - font-style: normal; */
-  font-size: 14px;
+  padding: 27px clamp(5px, 2vw, 15px);
+  font-size: clamp(7px, 2vw, 14px);
   font-weight: 700;
   line-height: 1.17;
   color: var(--color-white);
   text-align: center;
   text-transform: uppercase;
+
   background-color: rgba(47, 48, 58, 0.8);
 }
 
@@ -689,10 +645,7 @@ main > .activities {
   background-color: var(--color-bg-section-grey);
 }
 
-/* .designers-container { } */
-/* .designers-title { } */
-
-/* team */
+/* team */ /* .designers-container { } */ /* .designers-title { } */
 .designers-list {
   flex-flow: row wrap;
   align-items: center;
@@ -704,7 +657,7 @@ main > .activities {
 
 /* team card 1-4 or "designer card" */
 .designer-list-item {
-  flex-basis: calc(100% / var(--cards-per-line-medium) - var(--uni-margin));
+  flex-basis: calc(100% / var(--cards-per-line-4) - var(--uni-margin));
   margin-top: var(--uni-margin);
   margin-left: var(--uni-margin);
 }
@@ -713,54 +666,55 @@ main > .activities {
   background-color: var(--color-white); /* card bg */
   border-radius: 0 0 4px 4px;
   /* Тень для Карточки дизайнера (статическая) - material shadow v1 */
-  box-shadow: var(--box-shadow-designer-card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .designer-card-title {
+  min-width: 160px;
+  min-height: 162px;
+
   padding: var(--uni-margin); /* Паддинги между именем/ролью дизайнера и их контейнером */
 }
 
+/* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
 .designer-name {
   min-height: 19px;
-  margin-bottom: var(--universal--margin-minimum);
-}
+  margin-bottom: var(--uni-margin-min);
 
-/* Designer-name - Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков */
-.primary-text-font {
-  /* Наследует от body: font-family: Roboto; */
-  /* Наследует от браузера: font-style: normal; */
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.19; /* 19px = to box height */
-  color: var(--color-text-primary);
-  text-align: center;
+  line-height: 1.19; /* 19px = box */
+  text-align: center; /* inherits color: #212121; */
 }
 
-/* Product Designer */
+/* Product Designer, Frontend Developer, Marketing, UI Designer, h19px */
 .designer-role {
   min-height: 19px;
+
   margin-bottom: 16px;
 
-  /* Наследует от body font-family: Roboto; */
-  /* Наследует от браузера font-size: 16px; font-style: normal; font-weight: 400; */
-  line-height: 1.19; /* identical to box height 19px */
-  color: var(--color-text-secondary); /* Secondary text color #757575 */
+  font-size: 16px; /* from browser font-weight: 400; */
+  line-height: 1.19; /* 19px = box */
+  color: var(--color-text-secondary); /* color: #757575; */
   text-align: center;
 }
 
-.designer-cards-social-list {
+/* START "Ссылки на соц. сети" */
+
+.social-list {
   justify-content: center;
 }
 
-.designer-card-social-item {
+.social-item {
   width: 44px;
   height: 44px;
 }
-.designer-card-social-item:not(:last-child) {
+.social-item:not(:last-child) {
   margin-right: 10px;
 }
 
-.designer-card-social-link {
+.social-link {
   align-items: center;
   justify-content: center;
 
@@ -768,22 +722,26 @@ main > .activities {
   height: 100%;
 
   border-radius: 50%;
+
+  transition: background-color var(--duration) var(--timing-function);
 }
 
-.designer-card-social-link:focus,
-.designer-card-social-link:hover {
+.social-link:focus,
+.social-link:hover {
   background-color: var(--color-accent);
 }
 
-.designer-contact-icon {
+.social-icon {
   fill: var(--color-icon);
+
+  transition: fill var(--duration) var(--timing-function);
 }
 
-.designer-card-social-link:hover .designer-contact-icon,
-.designer-card-social-link:focus .designer-contact-icon {
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
   fill: var(--color-white);
 }
-
+/* END "Ссылки на соц. сети" */
 /* ------------------------------------------------------ */
 /* || --------------- END "НАША КОМАНДА" ---------------- */
 /* ------------------------------------------------------ */
@@ -791,6 +749,8 @@ main > .activities {
 /* ------------------------------------------------------ */
 /* || ---------------- START "КЛИЕНТЫ" ------------------ */
 /* ------------------------------------------------------ */
+
+/* Постоянные клиенты */
 .clients-list {
   flex-flow: row wrap;
   align-items: center;
@@ -801,9 +761,11 @@ main > .activities {
 }
 
 .clients-item {
-  flex-basis: var(--flex-basis-client-card); /* 6 cards */
+  /*  Ширина карточки Постоянные клиенты */
+  flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin)); /* 6 cards */
+
   height: 92px;
-  margin: var(--flex-margins-top-and-left); /* 30px top left */
+  margin: var(--uni-margin) 0 0 var(--uni-margin); /* 30px top and left */
 }
 
 .clients-link {
@@ -813,10 +775,14 @@ main > .activities {
 
   border: 1px solid var(--color-icon);
   border-radius: 4px;
+
+  transition: border-color var(--duration) var(--timing-function);
 }
 
 .clients-icon {
   fill: var(--color-icon);
+
+  transition: fill var(--duration) var(--timing-function);
 }
 
 .clients-link:hover,
@@ -828,7 +794,6 @@ main > .activities {
 .clients-link:focus .clients-icon {
   fill: var(--color-accent);
 }
-
 /* ------------------------------------------------------ */
 /* || ----------------- END "КЛИЕНТЫ" ------------------- */
 /* ------------------------------------------------------ */
@@ -837,7 +802,6 @@ main > .activities {
 /* || -------------- START "ПОДВАЛ САЙТА" --------------- */
 /* ------------------------------------------------------ */
 .page-footer {
-  min-width: 370px;
   padding: 60px 0;
   background-color: var(--color-bg-hero);
 }
@@ -847,10 +811,9 @@ main > .activities {
   align-items: baseline;
 }
 
-/* .footer-address-wrapper { } */
-
+/* START Футер-адрес */ /* .footer-address-wrapper { } */
 .footer-address {
-  margin-top: var(--universal--margin-small);
+  margin-top: var(--uni-margin-small);
   font-style: inherit;
 }
 
@@ -858,36 +821,37 @@ main > .activities {
 /* .footer-address-list-item { } */
 
 .footer-address-list-item:not(:last-child) {
-  margin-bottom: var(--margin-bottom-footer-address-list-item);
+  margin-bottom: 9px; /* Нижний отступ между ссылками в адресе */
 }
 
-/* г. Киев, пр-т Леси Украинки, 26, info@example.com, +38 099 111 11 11 */
-.footer-map-pointer,
-.footer-contacts {
-  max-height: 21px;
-}
-
-/* г. Киев, пр-т Леси Украинки, 26 */
+/* г. Киев, пр-т Леси Украинки, 26; LH24px; */
 .footer-map-pointer {
+  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
   color: var(--color-white);
 }
 
-/* info@example.com, +38 099 111 11 11 */
+/* info@example.com, +38 099 111 11 11, h21px */
 .footer-contacts {
-  color: var(--color-footer-contacts);
+  /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
+  color: rgba(255, 255, 255, 0.6);
 }
+/* END Футер-адрес */
 
+/*
+ *
+*/
+
+/* START "Футер cоц. ссылки" */
 .footer-social-container {
   margin-left: 70px;
 }
 
+/* присоединяйтесь, h16.41px */
 .footer-social-title {
   margin-bottom: 20px;
 
-  font-size: 14px;
   font-weight: 700;
-  line-height: 1.14;
-
+  line-height: 1.17; /* from body font-size: 14px; */
   color: var(--color-white);
   text-transform: uppercase;
 }
@@ -897,17 +861,17 @@ main > .activities {
 }
 
 .footer-social-list-item:not(:last-child) {
-  margin-right: var(--margin-right-footer-social-list-item);
+  margin-right: 21px; /* Правый отступ между ссылками на соц. сети */
 }
 
 .footer-social-link {
-  background-color: var(--color-bg-icon-footer);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-social-icon {
   fill: var(--color-white);
 }
-
+/* END "Футер cоц. ссылки" */
 /* ------------------------------------------------------ */
 /* || -------------- END "ПОДВАЛ САЙТА" ----------------- */
 /* ------------------------------------------------------ */
@@ -920,7 +884,7 @@ main > .activities {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: var(--universal--margin-large);
+  margin-bottom: var(--uni-margin-big);
   white-space: nowrap;
 }
 
@@ -928,26 +892,28 @@ main > .activities {
   flex-flow: row wrap;
   justify-content: flex-start;
 
-  margin-top: calc(-1 * var(--margin-top-portfolio-filter));
-  margin-left: calc(-1 * var(--margin-left-portfolio-filter));
+  margin-top: calc(-1 * 15px);
+  margin-left: calc(-1 * 8px);
 }
 
 .portfolio-filter-list-item {
-  margin-top: var(--margin-top-portfolio-filter);
-  margin-left: var(--margin-left-portfolio-filter);
+  margin-top: 15px; /* Верхний отступ между фильтрами-кнопками */
+  margin-left: 8px; /* Левый отступ между фильтрами-кнопками */
 }
 
 /* START "Фильтры-Кнопки" - Все, Веб-сайты, Приложения, Дизайн, Маркетинг */
 
 /* Вторичная кнопка по наведению: фон - акцент, текст белый + тень (динамическая) */
-.current,
+.current-btn,
 .btn--secondary[aria-current="true"],
 .btn--secondary:hover,
 .btn--secondary:focus,
 .btn--secondary:active {
   color: var(--color-white);
+
   background-color: var(--color-accent); /* Акцент #2196F3 */
-  box-shadow: var(--box-shadow-filter-btn); /* Динамическая тень по наведению - shadow-middle */
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 2px rgba(0, 0, 0, 0.12); /* Динамическая тень по наведению - shadow-middle */
 }
 /* END "Фильтры-Кнопки" */
 
@@ -969,48 +935,90 @@ main > .activities {
 
 /* project 4 */
 .portfolio-list-item {
-  flex-basis: var(--flex-basis-portfolio-card);
-  margin: var(--flex-margins-top-and-left);
+  /* Макс. ширина карточки Проекта */
+  flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
+
+  margin: var(--uni-margin) 0 0 var(--uni-margin);
+}
+
+.portfolio-card {
   background-color: var(--color-white);
 }
 
 .portfolio-project-link {
   display: block;
+
+  transition: box-shadow var(--duration) var(--timing-function);
 }
 
 .portfolio-project-link:focus,
-.portfolio-project-link:hover {
+.portfolio-project-link:hover,
+.portfolio-project-link:active {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.project-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
 .project-title {
+  max-height: var(--max-height-project-title);
+
   padding: 20px 23px 19px 23px;
   border-right: 1px solid var(--color-bg-project-card);
   border-bottom: 1px solid var(--color-bg-project-card);
   border-left: 1px solid var(--color-bg-project-card);
 }
 
-/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business" */
+/* "Технокряк, Постер New Orlean vs Golden Star, Ресторан Seafood, Проект Prime, Проект Boxes, Inspiration has no Borders, Издание Limited Edition, Проект LAB, Growing Business", h36px */
 .portfolio-project-name {
   min-height: calc(6px + var(--uni-margin));
   margin-bottom: 4px;
 
-  font-size: 18px;
-  line-height: 2; /* = box height, 36px or 200% */
-  color: var(--color-text-primary);
-  letter-spacing: 0.06em;
+  font-size: 18px; /* от h3 font-weight: 700; */
+  line-height: 2; /* 36px = box */
+  letter-spacing: 0.06em; /* От body color: #212121; */
   white-space: nowrap;
-  /* Наследует от body - font-family: Roboto;
-   * Наследует от браузера - font-size: 700px; font-weight: 700; font-style: normal; */
 }
 
-/* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг */
+/* Тип проекта: Веб-сайт, Дизайн, Приложение, Маркетинг, h30px */
 .portfolio-project-type {
   min-height: var(--uni-margin);
-  font-size: 16px;
-  line-height: 1.87; /* 19px */
-  color: var(--color-text-secondary);
+  font-size: 16px; /* from body font-weight: 400; */
+  line-height: 1.88; /* 30px = box */
+  color: var(--color-text-secondary); /* color: #757575; */
+}
+
+/* Description = Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов. */
+.portfolio-project-desc {
+  position: absolute;
+  top: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: 2;
+
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--color-white);
+
+  background-color: rgba(33, 150, 243, 0.9);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity var(--duration) var(--timing-function),
+    top var(--duration) var(--timing-function);
+}
+
+.portfolio-project-link:focus .portfolio-project-desc,
+.portfolio-project-link:hover .portfolio-project-desc,
+.portfolio-project-link:active .portfolio-project-desc {
+  top: 0;
+
+  opacity: 1;
 }
 
 /* ------------------------------------------------------ */
@@ -1020,7 +1028,6 @@ main > .activities {
 /* ------------------------------------------------------ */
 /* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
 /* ------------------------------------------------------ */
-
 .contact-form {
   min-width: 400px; /* Change me ! */
   padding: 40px; /* Change me ! */
@@ -1040,36 +1047,33 @@ main > .activities {
   text-transform: uppercase;
   background-color: var(--color-white);
 }
-
 /* ------------------------------------------------------ */
 /* || -------------- END "СТУДИЯ - ФОРМА" --------------- */
 /* ------------------------------------------------------ */
 
 /* ------------------------------------------------------ */
-/* || ----------------- START "МОДАЛКА" ----------------- */
+/* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
 /* ------------------------------------------------------ */
 
+/* Overlay */
 .backdrop {
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 100;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 
-  transition: opacity 250ms rgba(0, 0, 0, 0.21);
-  transition-duration: 250ms;
+  transition: opacity var(--duration) var(--timing-function); /* FIXME smoothly close backdrop */
 }
 
 .modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 21%; /* FIXME */
   max-width: 60vw;
   background-color: var(--color-white);
   border-radius: 21px;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, 50%);
 }
 
 /* .contact-form-head {
@@ -1094,7 +1098,6 @@ main > .activities {
 }
 
 .modal-close-btn {
-  /* FIXME */
   min-width: 30px; /* FIXME */
   min-height: 30px; /* FIXME */
   padding-right: 15px; /* FIXME */
@@ -1109,7 +1112,7 @@ main > .activities {
   margin-right: 5px;
 }
 /* ------------------------------------------------------ */
-/* || ------------------ END "МОДАЛКА" ------------------ */
+/* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */
 /* ------------------------------------------------------ */
 
 /* Позиционирование */
