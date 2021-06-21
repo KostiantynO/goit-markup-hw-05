@@ -8,7 +8,7 @@
   --color-text-secondary: #757575; /* Вторичный цвет текста #757575 */
   --color-accent: #2196f3; /* Акцент #2196F3, "Web" в Лого */
   --color-bg-hero: #2f303a;
-  --color-bg-section-grey: #f5f4fa;
+  --color-bg-secondary: #f5f4fa;
   --color-bg-project-card: #eeeeee;
   --color-white: #ffffff; /* h1, portfolio-name& */
   --color-icon: #afb1b8;
@@ -147,6 +147,10 @@ body .💪 {
   padding-bottom: 94px;
 }
 
+.section:nth-child(2n + 4) {
+  background-color: var(--color-bg-secondary);
+}
+
 /* Чем мы занимаемся, Наша команда, Постоянные клиенты h42px */
 .section-title {
   margin-bottom: var(--uni-margin-big);
@@ -186,7 +190,7 @@ body .💪 {
   letter-spacing: inherit;
 
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   border-radius: 4px;
   /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; Hover Focus from .btn--secondary */
 }
@@ -202,7 +206,7 @@ body .💪 {
 /* Вторичная кнопка: Фон - серый #f5f4fa,  цвет - темный #212121, + тень динамическая по ховеру */
 .btn--secondary {
   color: var(--color-text-primary);
-  background-color: var(--color-bg-section-grey); /* Rectangle 10 */
+  background-color: var(--color-bg-secondary); /* Rectangle 10 */
 
   transition: color var(--duration) var(--timing-function),
     background-color var(--duration) var(--timing-function),
@@ -240,7 +244,7 @@ body .💪 {
 }
 
 .logo {
-  display: inline-flex; /* WebStudio width: 145px; height: 31px; */
+  display: inline-flex; /* WebStudio w145px; h31px; */
   flex-flow: row nowrap;
 
   font-family: "Raleway", sans-serif;
@@ -357,72 +361,73 @@ body .💪 {
  *
 */
 
-.sr-only {
+/* START "СКРЫТЫЕ КЛАССЫ"*/
+body .sr-only {
   /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
   Тогда контент не выделяется табом.  Контент видно, выделяется мышкой. Блок в потоке. */
 
   /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
   * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
   * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
-  position: absolute !important; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
-  top: auto !important;
-  left: -10000px !important;
-  width: 1px !important; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
-  height: 1px !important; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
-  padding: 0 !important; /* small importance */ /* Нет внутренних отступов. Не влияет. */
-  margin: -1px !important; /* small importance */ /* Нет внешних отступов. Не влияет. */
+  position: absolute; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
+  top: auto;
+  left: -10000px;
+  width: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  height: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  padding: 0; /* small importance */ /* Нет внутренних отступов. Не влияет. */
+  margin: -1px; /* small importance */ /* Нет внешних отступов. Не влияет. */
 
-  overflow: hidden !important; /* Useful */ /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
+  overflow: hidden; /* Useful */ /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
   clip-path: inset(100%); /* Useful */ /* Вырезает контент. Блок в потоке. */
   clip: rect(1px 1px 1px 1px); /* Useful */ /* Старая IE6, IE7, вырезает контент. Блок в потоке. */
   clip: rect(1px, 1px, 1px, 1px); /* Useful */ /* Старая, вырезает контент. Блок в потоке. */
 
-  font-size: 1px !important; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
-  line-height: 1px !important; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
-  white-space: nowrap !important; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
+  font-size: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  white-space: nowrap; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
 
-  pointer-events: none !important; /* MUST HAVE */ /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
+  pointer-events: none; /* MUST HAVE */ /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
 
-  border: 0 !important; /* small importance */ /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
-  outline: none !important; /* small importance */ /* Нет рамки вокруг. Не влияет. */
-  outline-offset: 0 !important; /* small importance */ /* Нет сдвига рамки вокруг. Не влияет. */
-  opacity: 0 !important; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+  border: 0; /* small importance */ /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
+  outline: none; /* small importance */ /* Нет рамки вокруг. Не влияет. */
+  outline-offset: 0; /* small importance */ /* Нет сдвига рамки вокруг. Не влияет. */
+  opacity: 0; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
 }
 
-/* START "СКРЫТЫЕ КЛАССЫ"
-* "Модальное окно скрыто и недоступно для скрин-ридеров до момента нажатия на кнопку-героя"
-*/
-.is-hidden {
+/* "Модальное окно скрыто и недоступно для скрин-ридеров до момента нажатия на кнопку-героя" */
+body .is-hidden {
   /* В классе "screen readers only" (.sr-only) Для Читалок удалить visibility: hidden; -> и задать элементу (скрытым заголовкам секций) в тег tabindex="0"
   Тогда контент не выделяется табом.  Контент видно, выделяется мышкой. Блок в потоке. */
 
   /* Do not size content to 0 pixels if you want the content to be read by a screen reader.
   * If content styled with font-size:0px or line-height:0, then the elements would still take horizontal space on the screen.
   * All these techniques may result in search engine penalties as they may be interpreted as malicious. */
-  position: absolute !important; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
-  top: auto !important;
-  left: -10000px !important;
-  width: 1px !important; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
-  height: 1px !important; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
-  padding: 0 !important; /* small importance */ /* Нет внутренних отступов. Не влияет. */
-  margin: -1px !important; /* small importance */ /* Нет внешних отступов. Не влияет. */
+  position: absolute; /* Small */ /* Вытягивает Блок из потока. Сдвигает все элементы страницы выше на высоту блока. Не влияет на сам контент. */
 
-  overflow: hidden !important; /* Useful */ /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
+  width: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  height: 1px; /* Useful */ /* Не влияет на строчный контент, а Блочный - меньше, но в потоке. */
+  padding: 0; /* small importance */ /* Нет внутренних отступов. Не влияет. */
+  margin: -1px; /* small importance */ /* Нет внешних отступов. Не влияет. */
+
+  overflow: hidden; /* Useful */ /* Обрезает контент если Блочный контейнер имеет высоту\максвысоту, или white-space: nowrap. */
   clip-path: inset(100%); /* Useful */ /* Вырезает контент. Блок в потоке. */
   clip: rect(1px 1px 1px 1px); /* Useful */ /* Старая IE6, IE7, вырезает контент. Блок в потоке. */
   clip: rect(1px, 1px, 1px, 1px); /* Useful */ /* Старая, вырезает контент. Блок в потоке. */
 
-  font-size: 1px !important; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
-  line-height: 1px !important; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
-  white-space: nowrap !important; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
+  font-size: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  line-height: 1px; /* Useful */ /* Уменьшает текстовый контент, можно выделить с другими элементами. Блок меньше, но в потоке. */
+  white-space: nowrap; /* small importance */ /* Nowrap - элементы в одной строке не переходят на новую строку. Влияет на overflow. */
 
-  pointer-events: none !important; /* MUST HAVE */ /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
-  visibility: hidden !important; /* MUST HAVE */ /* НЕ ДОСТУПЕН ДЛЯ ЧИТАЛОК. Не выделяется ни мышкой, ни табом. Контент прозрачный. Блок в потоке. */
+  pointer-events: none; /* MUST HAVE */ /* Не выделяется мышкой. Контент видно, выделяется табом. Блок в потоке. */
+  visibility: hidden; /* MUST HAVE */ /* НЕ ДОСТУПЕН ДЛЯ ЧИТАЛОК. Не выделяется ни мышкой, ни табом. Контент прозрачный. Блок в потоке. */
 
-  border: 0 !important; /* small importance */ /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
-  outline: none !important; /* small importance */ /* Нет рамки вокруг. Не влияет. */
-  outline-offset: 0 !important; /* small importance */ /* Нет сдвига рамки вокруг. Не влияет. */
-  opacity: 0 !important; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+  border: 0; /* small importance */ /* Нет границы. Сжимает внутрь на 1px. Не влияет. */
+  outline: none; /* small importance */ /* Нет рамки вокруг. Не влияет. */
+  outline-offset: 0; /* small importance */ /* Нет сдвига рамки вокруг. Не влияет. */
+  opacity: 0; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
+
+  transition: visibility var(--duration) var(--timing-function),
+    opacity var(--duration) var(--timing-function); /* FIXME smooth fade */
 }
 /* END "СКРЫТЫЕ КЛАССЫ" */
 
@@ -451,9 +456,9 @@ body .💪 {
 main > .hero {
   max-width: 1600px;
 
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding: 200px 0;
   margin: 0 auto;
+  text-align: center;
 
   background-color: var(--color-bg-hero); /* 2F303A */
   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
@@ -464,18 +469,7 @@ main > .hero {
 }
 
 .hero-container {
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
   min-height: 200px;
-}
-
-/* Эффективные решения для вашего бизнеса */
-.hero-title-container {
-  flex-flow: row wrap;
-  align-items: center;
-  min-height: 120px;
-  margin-bottom: var(--uni-margin);
 }
 
 .hero-title-br {
@@ -484,14 +478,15 @@ main > .hero {
 }
 
 /* Эффективные решения для вашего бизнеса */
-.hero-title-container > .hero-title {
-  /* Наследует от body: font-family: Roboto; */
-  /* Наследует от браузера: font-style: normal; */
+.hero-container > .hero-title {
+  min-height: 120px;
+
+  margin-bottom: var(--uni-margin);
+
   font-size: clamp(1.2em, 5.6vw, 44px);
-  font-weight: 900;
+  font-weight: 900; /* body: Roboto; браузера: font-style: normal; */
   line-height: 1.36; /* 60px */
   color: var(--color-white);
-  text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -559,7 +554,7 @@ main > .features {
   min-height: 120px;
   margin-bottom: 30px;
 
-  background: var(--color-bg-section-grey);
+  background: var(--color-bg-secondary);
   border-radius: 4px;
 }
 
@@ -642,7 +637,7 @@ main > .activities {
 /* || ------------- START "НАША КОМАНДА" ---------------- */
 /* ------------------------------------------------------ */
 .designers {
-  background-color: var(--color-bg-section-grey);
+  background-color: var(--color-bg-secondary);
 }
 
 /* team */ /* .designers-container { } */ /* .designers-title { } */
@@ -707,7 +702,7 @@ main > .activities {
 }
 
 .social-item {
-  width: 44px;
+  width: 44px; /* social-item - container for social-link */
   height: 44px;
 }
 .social-item:not(:last-child) {
@@ -1029,20 +1024,20 @@ main > .activities {
 /* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
 /* ------------------------------------------------------ */
 .contact-form {
-  min-width: 400px; /* Change me ! */
-  padding: 40px; /* Change me ! */
-  margin: 0 auto; /* Change me ! */
+  min-width: 400px; /* FIXME */
+  padding: 40px; /* FIXME */
+  margin: 0 auto; /* FIXME */
   margin-top: 21px;
-  border: 1px solid #cccccc; /* Change me ! */
+  border: 1px solid #cccccc; /* FIXME */
 }
 
 .contact-form-message {
-  padding: 20px; /* Change me ! */
+  padding: 20px; /* FIXME */
   resize: none;
 }
 
 .contact-form-message::placeholder {
-  padding: 1px; /* Change me ! */
+  padding: 1px; /* FIXME */
   color: var(--color-text-secondary);
   text-transform: uppercase;
   background-color: var(--color-white);
@@ -1056,6 +1051,7 @@ main > .activities {
 /* ------------------------------------------------------ */
 
 /* Overlay */
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -1064,16 +1060,17 @@ main > .activities {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
 
-  transition: opacity var(--duration) var(--timing-function); /* FIXME smoothly close backdrop */
+  transition: all var(--duration) var(--timing-function),
+    opacity var(--duration) var(--timing-function); /* FIXME smooth fade */
 }
 
 .modal {
   position: absolute;
-  top: 21%; /* FIXME */
+
   max-width: 60vw;
+
   background-color: var(--color-white);
   border-radius: 21px;
-  transform: translate(50%, 50%);
 }
 
 /* .contact-form-head {
@@ -1081,7 +1078,7 @@ main > .activities {
 } */
 
 .contact-form {
-  position: absolute;
+  /* position: absolute; */
   flex-flow: column nowrap;
 }
 
