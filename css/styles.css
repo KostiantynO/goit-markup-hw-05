@@ -42,7 +42,6 @@
   /* Количество карточек Проектов на одной линии во флекс-сетке. */
   --cards-per-line-3: 3;
 
-  --max-height-project-title: 110px;
   /* || ------------------ END "ОТСТУПЫ" ------------------ */
 
   /* || ---------------- START "АНИМАЦИЯ" ----------------- */
@@ -102,7 +101,7 @@ body {
   background-color: var(--color-white);
 }
 
-body .💪 {
+body . {
   display: flex;
 }
 
@@ -136,10 +135,12 @@ body .💪 {
 }
 
 .container {
-  min-width: 290px; /* Мин. шир. контейнера */
-  max-width: 1200px; /* Макс. ширина контейнера */
-  padding: 0 15px; /* Отдаляет от границы экрана */
-  margin: 0 auto; /* Центрирует по ширине */
+  min-width: 290px; /* Мин. и макс. ширина контейнера */
+  max-width: 1200px;
+  padding-right: 15px; /* Отдаляет от границы экрана */
+  padding-left: 15px;
+  margin-right: auto; /* Центрирует по ширине */
+  margin-left: auto;
 }
 
 .section {
@@ -190,7 +191,11 @@ body .💪 {
   letter-spacing: inherit;
 
   cursor: pointer;
-  border: 1px solid transparent;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+
   border-radius: 4px;
   /* Inherits color: #212121; and background-color: #f5f4fa; in normal state and color: #ffffff; and background-color: #2196f3; Hover Focus from .btn--secondary */
 }
@@ -221,17 +226,25 @@ body .💪 {
 /* ------------------------------------------------------ */
 
 .page-header {
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
   border-bottom: 1px solid #ececec; /* Line - Декор линия*/
 }
 
-.header-container {
-  flex-flow: row wrap;
+.page-header > .container {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: center;
 }
 
 .header-nav {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 /*
@@ -239,17 +252,15 @@ body .💪 {
 */
 
 /* START "Лого-ссылка WebStudio" */
-.logo-container {
-  margin-right: 93px; /* Правый отступ у Лого */
-}
-
 .logo {
   display: inline-flex; /* WebStudio w145px; h31px; */
-  flex-flow: row nowrap;
+
+  flex-direction: row;
+  flex-wrap: nowrap;
 
   font-family: "Raleway", sans-serif;
-  font-size: 26px; /* Web inherits color: #2196F3; from .accent */
-  font-weight: 700; /* Studio inherits color: #000000; from .black */
+  font-size: 26px; /* Web has color: #2196F3; from .accent */
+  font-weight: 700; /* Studio has color: #000000; from .black */
   line-height: 1.19; /* 31px = box */
 }
 
@@ -274,20 +285,21 @@ body .💪 {
 
 /* START "Главная навигация сайта" */
 .nav-menu {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-}
 
-/* .nav-menu-item { } */
+  margin-left: 93px; /* левый у Нав */
+} /* .nav-menu-item { } */
 
-.nav-menu-item:not(:last-child) {
-  margin-right: var(--uni-margin-big);
+.nav-menu .nav-menu-item + .nav-menu-item {
+  margin-left: var(--uni-margin-big); /* выбирает всех соседей, кроме первого в html */
 }
 
 /* Студия, Портфолио, Контакты, info@devstudio.com, +38 096 111 11 11, h16px */
 .nav-link,
 .header-contact {
-  padding-top: 7px;
   padding-bottom: 8px;
 
   font-weight: 500;
@@ -299,6 +311,7 @@ body .💪 {
 
 /* Студия, Портфолио, Контакты */
 .nav-link {
+  padding-top: 8px;
   position: relative; /* inherits color: #212121; */
 }
 
@@ -326,22 +339,27 @@ body .💪 {
 */
 
 /* START "Шапка сайта - Контакты" */
-.header-contacts-container {
+
+.header-contacts-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   margin-left: auto; /* info@devstudio.com, +38 096 111 11 11 */
 }
 
-.header-contacts-list {
-  flex-flow: row wrap;
-  align-items: center;
-}
-
-.header-contact-list-item:not(:last-child) {
-  margin-right: var(--uni-margin-big);
+.header-contacts-list .contact-item + .contact-item {
+  margin-left: var(--uni-margin-big);
 }
 
 .header-contact {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
+
+  padding-top: 7px;
+
   color: var(--color-text-secondary);
 }
 
@@ -442,8 +460,6 @@ body .is-hidden {
 .logo:focus .webstudio,
 .logo:active .webstudio {
   color: var(--color-accent); /* Акцент #2196F3 */
-
-  transition: color var(--duration) var(--timing-function);
 }
 /* END Подсветка ссылок */
 /* ------------------------------------------------------ */
@@ -456,8 +472,11 @@ body .is-hidden {
 main > .hero {
   max-width: 1600px;
 
-  padding: 200px 0;
-  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  margin-right: auto;
+  margin-left: auto;
+
   text-align: center;
 
   background-color: var(--color-bg-hero); /* 2F303A */
@@ -474,7 +493,8 @@ main > .hero {
 
 .hero-title-br {
   display: block;
-  padding: 10px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Эффективные решения для вашего бизнеса */
@@ -532,7 +552,9 @@ main > .features {
 
 /* Особенности */ /* .features-container { } */
 .features-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -546,7 +568,8 @@ main > .features {
   margin-left: var(--uni-margin);
 }
 
-.features-items-wrapper {
+.feature-icon-wrapper {
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -595,7 +618,9 @@ main > .activities {
 /* .activities-title { } */
 
 .activities-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
 
   margin-top: calc(-1 * var(--uni-margin));
@@ -618,7 +643,11 @@ main > .activities {
   bottom: 0;
   width: 100%;
 
-  padding: 27px clamp(5px, 2vw, 15px);
+  padding-top: 27px;
+  padding-right: clamp(5px, 2vw, 15px);
+  padding-bottom: 27px;
+  padding-left: clamp(5px, 2vw, 15px);
+
   font-size: clamp(7px, 2vw, 14px);
   font-weight: 700;
   line-height: 1.17;
@@ -642,7 +671,9 @@ main > .activities {
 
 /* team */ /* .designers-container { } */ /* .designers-title { } */
 .designers-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -669,7 +700,10 @@ main > .activities {
   min-width: 160px;
   min-height: 162px;
 
-  padding: var(--uni-margin); /* Паддинги между именем/ролью дизайнера и их контейнером */
+  padding-top: var(--uni-margin); /* Паддинги между именем/ролью дизайнера и их контейнером */
+  padding-right: calc(var(--uni-margin) + 2px);
+  padding-bottom: var(--uni-margin);
+  padding-left: calc(var(--uni-margin) + 2px);
 }
 
 /* Игорь Демьяненко, Ольга Репина, Николай Тарасов, Михаил Ермаков, h19px */
@@ -687,8 +721,6 @@ main > .activities {
 .designer-role {
   min-height: 19px;
 
-  margin-bottom: 16px;
-
   font-size: 16px; /* from browser font-weight: 400; */
   line-height: 1.19; /* 19px = box */
   color: var(--color-text-secondary); /* color: #757575; */
@@ -698,18 +730,24 @@ main > .activities {
 /* START "Ссылки на соц. сети" */
 
 .social-list {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  margin-top: 16px;
 }
 
 .social-item {
   width: 44px; /* social-item - container for social-link */
   height: 44px;
 }
-.social-item:not(:last-child) {
-  margin-right: 10px;
+
+.social-list .social-item + .social-item {
+  margin-left: 10px;
 }
 
 .social-link {
+  display: flex;
   align-items: center;
   justify-content: center;
 
@@ -747,7 +785,9 @@ main > .activities {
 
 /* Постоянные клиенты */
 .clients-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -755,38 +795,44 @@ main > .activities {
   margin-left: calc(-1 * var(--uni-margin));
 }
 
-.clients-item {
-  /*  Ширина карточки Постоянные клиенты */
+.client-item {
+  /*  Ширина карточки постоянного клиента */
   flex-basis: calc(100% / var(--cards-per-line-6) - var(--uni-margin)); /* 6 cards */
 
   height: 92px;
-  margin: var(--uni-margin) 0 0 var(--uni-margin); /* 30px top and left */
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
 }
 
-.clients-link {
+.client-link {
+  display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100%;
 
-  border: 1px solid var(--color-icon);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-icon);
   border-radius: 4px;
 
   transition: border-color var(--duration) var(--timing-function);
 }
 
-.clients-icon {
+.client-icon {
   fill: var(--color-icon);
 
   transition: fill var(--duration) var(--timing-function);
 }
 
-.clients-link:hover,
-.clients-link:focus {
-  border: 1px solid var(--color-accent);
+.client-link:hover,
+.client-link:focus {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--color-accent);
 }
 
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--color-accent);
 }
 /* ------------------------------------------------------ */
@@ -797,12 +843,15 @@ main > .activities {
 /* || -------------- START "ПОДВАЛ САЙТА" --------------- */
 /* ------------------------------------------------------ */
 .page-footer {
-  padding: 60px 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--color-bg-hero);
 }
 
-.footer-container {
-  flex-flow: row wrap;
+.page-footer > .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: baseline;
 }
 
@@ -815,8 +864,8 @@ main > .activities {
 /* .footer-address-list { } */
 /* .footer-address-list-item { } */
 
-.footer-address-list-item:not(:last-child) {
-  margin-bottom: 9px; /* Нижний отступ между ссылками в адресе */
+.footer-address-list .footer-address-item + .footer-address-item {
+  margin-top: 9px; /* Верхний отступ между ссылками в адресе */
 }
 
 /* г. Киев, пр-т Леси Украинки, 26; LH24px; */
@@ -826,7 +875,7 @@ main > .activities {
 }
 
 /* info@example.com, +38 099 111 11 11, h21px */
-.footer-contacts {
+.footer-contact {
   /* from browser - font-weight: 400; from .footer-address - font-style: normal; */
   color: rgba(255, 255, 255, 0.6);
 }
@@ -843,8 +892,6 @@ main > .activities {
 
 /* присоединяйтесь, h16.41px */
 .footer-social-title {
-  margin-bottom: 20px;
-
   font-weight: 700;
   line-height: 1.17; /* from body font-size: 14px; */
   color: var(--color-white);
@@ -852,11 +899,7 @@ main > .activities {
 }
 
 .footer-social-list {
-  flex-flow: row wrap;
-}
-
-.footer-social-list-item:not(:last-child) {
-  margin-right: 21px; /* Правый отступ между ссылками на соц. сети */
+  margin-top: 20px;
 }
 
 .footer-social-link {
@@ -875,7 +918,9 @@ main > .activities {
 /* || ------- START "ПОРТФОЛИО - ФИЛЬТРЫ-КНОПКИ" -------- */
 /* ------------------------------------------------------ */
 .portfolio-filters {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -884,7 +929,9 @@ main > .activities {
 }
 
 .portfolio-filters-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
 
   margin-top: calc(-1 * 15px);
@@ -920,7 +967,9 @@ main > .activities {
 /* || --- START "ПОРТФОЛИО - СПИСОК КАРТОЧЕК ПРОЕКТОВ" -- */
 /* ------------------------------------------------------ */
 .portfolio-list {
-  flex-flow: row wrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 
@@ -933,7 +982,8 @@ main > .activities {
   /* Макс. ширина карточки Проекта */
   flex-basis: calc(100% / var(--cards-per-line-3) - var(--uni-margin));
 
-  margin: var(--uni-margin) 0 0 var(--uni-margin);
+  margin-top: var(--uni-margin); /* 30px top and left */
+  margin-left: var(--uni-margin);
 }
 
 .portfolio-card {
@@ -953,15 +1003,25 @@ main > .activities {
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
+.portfolio-card > .links:hover,
+.portfolio-card > .links:focus,
+.portfolio-card > .links:active {
+  color: inherit;
+}
+
 .project-image-wrapper {
   position: relative;
   overflow: hidden;
 }
 
 .project-title {
-  max-height: var(--max-height-project-title);
+  min-height: 110px;
 
-  padding: 20px 23px 19px 23px;
+  padding-top: 20px;
+  padding-right: 19px;
+  padding-bottom: 23px;
+  padding-left: 23px;
+
   border-right: 1px solid var(--color-bg-project-card);
   border-bottom: 1px solid var(--color-bg-project-card);
   border-left: 1px solid var(--color-bg-project-card);
@@ -990,11 +1050,14 @@ main > .activities {
 .portfolio-project-desc {
   position: absolute;
   top: 100%;
-  min-width: 100%;
-  min-height: 100%;
   z-index: 2;
 
-  padding: 63px 24px;
+  min-width: 100%;
+  min-height: 100%;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
 
   font-size: 18px;
   line-height: 1.56;
@@ -1024,20 +1087,42 @@ main > .activities {
 /* || ------------- START "СТУДИЯ - ФОРМА" -------------- */
 /* ------------------------------------------------------ */
 .contact-form {
-  min-width: 400px; /* FIXME */
-  padding: 40px; /* FIXME */
-  margin: 0 auto; /* FIXME */
+  /* FIXME */
+  min-width: 400px;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+
+  /* BUG */
+  margin-right: auto;
+  margin-left: auto;
+
   margin-top: 21px;
-  border: 1px solid #cccccc; /* FIXME */
+
+  /* FIXME */
+  border-width: 1px;
+  border-style: solid;
+  border-color: #cccccc;
 }
 
 .contact-form-message {
-  padding: 20px; /* FIXME */
+  /* FIXME */
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+
   resize: none;
 }
 
 .contact-form-message::placeholder {
-  padding: 1px; /* FIXME */
+  /* FIXME */
+  padding-top: 1px;
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-left: 1px;
+
   color: var(--color-text-secondary);
   text-transform: uppercase;
   background-color: var(--color-white);
@@ -1079,11 +1164,12 @@ main > .activities {
 
 .contact-form {
   /* position: absolute; */
-  flex-flow: column nowrap;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .modal-form-input {
-  width: 40px;
+  min-width: 40px;
 }
 
 .modal-close-btn-container {
