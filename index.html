@@ -36,7 +36,7 @@
   </head>
 
   <body class="studio-body">
-    <!-- Шапка сайта 2021-06-22 14:06 -->
+    <!-- Шапка сайта 2021-06-23 17:41 -->
     <header class="page-header">
       <!-- Пропустить к Основному Контенту (для скрин-ридеров) -->
       <div class="skip-to-content">
@@ -65,12 +65,24 @@
               <a class="nav-link links" rel="noopener nofollow noreferrer" href="#0">Контакты</a>
             </li>
           </ul>
+
+          <button class="btn btn--secondary is-hidden" type="button">
+            <svg class="header-nav-icon svg icon-burger" width="40" height="40">
+              <use href="./images/svgomg-icomooned/icons.svg#icon-burger"></use>
+            </svg>
+          </button>
+
+          <button class="btn btn--secondary is-hidden" type="button">
+            <svg class="header-nav-icon svg icon-close" width="40" height="40">
+              <use href="./images/svgomg-icomooned/icons.svg#icon-close-mid"></use>
+            </svg>
+          </button>
         </nav>
 
         <ul class="header-contacts-list list">
           <li class="contact-item">
             <a class="header-contact links" href="mailto:info@devstudio.com">
-              <svg class="header-contact-icon icon-envelope" width="16" height="12">
+              <svg class="header-contact-icon svg icon-envelope" width="16" height="12">
                 <use href="./images/svgomg-icomooned/icons.svg#icon-envelope"></use>
               </svg>
 
@@ -80,7 +92,7 @@
 
           <li class="contact-item">
             <a class="header-contact links" href="tel:+380961111111">
-              <svg class="header-contact-icon icon-smartphone" width="10" height="16">
+              <svg class="header-contact-icon svg icon-smartphone" width="10" height="16">
                 <use href="./images/svgomg-icomooned/icons.svg#icon-smartphone"></use>
               </svg>
 
@@ -111,51 +123,28 @@
         <div class="features-container container">
           <h2 class="sr-only">Особенности</h2>
           <ul class="features-list list">
-            <li class="feature-list-item">
-              <div class="feature-icon-wrapper">
-                <svg class="features-item-icon" width="65" height="70">
-                  <use href="./images/svgomg-icomooned/icons.svg#icon-antenna"></use>
-                </svg>
-              </div>
-
+            <li class="feature-item">
               <h3 class="feature-heading">Внимание к деталям</h3>
               <p class="feature-paragraph">
                 Идейные соображения, а также начало повседневной работы по формированию позиции.
               </p>
             </li>
 
-            <li class="feature-list-item">
-              <div class="feature-icon-wrapper">
-                <svg class="features-item-icon" width="65" height="70">
-                  <use href="./images/svgomg-icomooned/icons.svg#icon-clock"></use>
-                </svg>
-              </div>
+            <li class="feature-item">
               <h3 class="feature-heading">Пунктуальность</h3>
               <p class="feature-paragraph">
                 Задача организации, в особенности же рамки и место обучения кадров влечет за собой.
               </p>
             </li>
 
-            <li class="feature-list-item">
-              <div class="feature-icon-wrapper">
-                <svg class="features-item-icon" width="65" height="70">
-                  <use href="./images/svgomg-icomooned/icons.svg#icon-diagram"></use>
-                </svg>
-              </div>
-
+            <li class="feature-item">
               <h3 class="feature-heading">Планирование</h3>
               <p class="feature-paragraph">
                 Равным образом консультация с широким активом в значительной степени обуславливает.
               </p>
             </li>
 
-            <li class="feature-list-item">
-              <div class="feature-icon-wrapper">
-                <svg class="features-item-icon" width="65" height="70">
-                  <use href="./images/svgomg-icomooned/icons.svg#icon-astronaut"></use>
-                </svg>
-              </div>
-
+            <li class="feature-item">
               <h3 class="feature-heading">Современные технологии</h3>
               <p class="feature-paragraph">
                 Значимость этих проблем настолько очевидна, что реализация плановых заданий.
@@ -180,7 +169,9 @@
                 height="294"
               />
 
-              <p class="activity-list-label">Десктопные приложения</p>
+              <div class="activity-overlay">
+                <p class="activity-list-label">Десктопные приложения</p>
+              </div>
             </li>
 
             <li class="activity-list-item">
@@ -192,7 +183,9 @@
                 height="294"
               />
 
-              <p class="activity-list-label">Мобильные приложения</p>
+              <div class="activity-overlay">
+                <p class="activity-list-label">Мобильные приложения</p>
+              </div>
             </li>
 
             <li class="activity-list-item">
@@ -204,7 +197,9 @@
                 height="294"
               />
 
-              <p class="activity-list-label">Дизайнерские решения</p>
+              <div class="activity-overlay">
+                <p class="activity-list-label">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -233,7 +228,7 @@
                   <ul class="social-list list">
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-instagram"></use>
                         </svg>
                       </a>
@@ -241,7 +236,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-twitter"></use>
                         </svg>
                       </a>
@@ -249,7 +244,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-facebook"></use>
                         </svg>
                       </a>
@@ -257,7 +252,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-linkedin"></use>
                         </svg>
                       </a>
@@ -284,7 +279,7 @@
                   <ul class="social-list list">
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-instagram"></use>
                         </svg>
                       </a>
@@ -292,7 +287,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-twitter"></use>
                         </svg>
                       </a>
@@ -300,7 +295,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-facebook"></use>
                         </svg>
                       </a>
@@ -308,7 +303,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-linkedin"></use>
                         </svg>
                       </a>
@@ -335,7 +330,7 @@
                   <ul class="social-list list">
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-instagram"></use>
                         </svg>
                       </a>
@@ -343,7 +338,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-twitter"></use>
                         </svg>
                       </a>
@@ -351,7 +346,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-facebook"></use>
                         </svg>
                       </a>
@@ -359,7 +354,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-linkedin"></use>
                         </svg>
                       </a>
@@ -386,7 +381,7 @@
                   <ul class="social-list list">
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-instagram"></use>
                         </svg>
                       </a>
@@ -394,7 +389,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-twitter"></use>
                         </svg>
                       </a>
@@ -402,7 +397,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-facebook"></use>
                         </svg>
                       </a>
@@ -410,7 +405,7 @@
 
                     <li class="social-item">
                       <a class="social-link" rel="noopener nofollow noreferrer" href="#0">
-                        <svg class="social-icon" width="20" height="20">
+                        <svg class="social-icon svg" width="20" height="20">
                           <use href="./images/svgomg-icomooned/icons.svg#icon-linkedin"></use>
                         </svg>
                       </a>
@@ -521,7 +516,7 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <svg class="social-icon footer-social-icon" width="20" height="20">
+                <svg class="social-icon svg footer-social-icon" width="20" height="20">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-instagram"></use>
                 </svg>
               </a>
@@ -533,7 +528,7 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <svg class="social-icon footer-social-icon" width="20" height="20">
+                <svg class="social-icon svg footer-social-icon" width="20" height="20">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-twitter"></use>
                 </svg>
               </a>
@@ -545,7 +540,7 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <svg class="social-icon footer-social-icon" width="20" height="20">
+                <svg class="social-icon svg footer-social-icon" width="20" height="20">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-facebook"></use>
                 </svg>
               </a>
@@ -557,7 +552,7 @@
                 rel="noopener nofollow noreferrer"
                 href="#0"
               >
-                <svg class="social-icon footer-social-icon" width="20" height="20">
+                <svg class="social-icon svg footer-social-icon" width="20" height="20">
                   <use href="./images/svgomg-icomooned/icons.svg#icon-linkedin"></use>
                 </svg>
               </a>
@@ -574,8 +569,13 @@
         <div class="modal-close-btn-container">
           <button class="modal-close-btn btn btn--secondary" data-modal-close type="button">
             X
+            <svg class="modal-close-icon" width="24" height="24">
+              <use href="./images/svgomg-icomooned/icons.svg#icon-close-small"></use>
+            </svg>
+            <svg><use href=""></use></svg>
           </button>
         </div>
+
         <!-- Форма -->
         <form class="contact-form" action="#" method="GET">
           <p class="modal-title">Оставьте свои данные, мы Вам перезвоним</p>
@@ -739,6 +739,7 @@ value+values
           </div>
           <div class="form-btn-container">
             <button class="contact-form-btn btn btn--secondary" type="submit">Submit</button>
+
             <button class="contact-form-btn btn btn--secondary" type="reset">Clear</button>
           </div>
         </form>
