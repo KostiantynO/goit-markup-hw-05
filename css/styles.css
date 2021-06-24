@@ -47,8 +47,8 @@
   /* || ------------------ END "ОТСТУПЫ" ------------------ */
 
   /* || ---------------- START "АНИМАЦИЯ" ----------------- */
-  --duration: 250ms;
-  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --time: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   /* || ----------------- END "АНИМАЦИЯ" ------------------ */
 }
 /* ------------------------------------------------------ */
@@ -122,10 +122,10 @@ body . {
   border-bottom: 1px solid var(--color-white);
   border-bottom-right-radius: 8px;
 
-  -webkit-transition: top var(--duration) var(--timing-function);
-  -moz-transition: top var(--duration) var(--timing-function);
-  -o-transition: top var(--duration) var(--timing-function);
-  transition: top var(--duration) var(--timing-function);
+  -webkit-transition: top var(--time) var(--cubic);
+  -moz-transition: top var(--time) var(--cubic);
+  -o-transition: top var(--time) var(--cubic);
+  transition: top var(--time) var(--cubic);
 }
 
 .skip-to-content > .skip-link:focus {
@@ -176,7 +176,7 @@ body . {
   color: inherit;
   text-decoration: none;
 
-  transition: color var(--duration) var(--timing-function);
+  transition: color var(--time) var(--cubic);
 }
 
 .btn-container {
@@ -232,9 +232,8 @@ body . {
   color: var(--color-text-primary);
   background-color: var(--color-bg-secondary); /* Rectangle 10 */
 
-  transition: color var(--duration) var(--timing-function),
-    background-color var(--duration) var(--timing-function),
-    box-shadow var(--duration) var(--timing-function);
+  transition: color var(--time) var(--cubic), background-color var(--time) var(--cubic),
+    box-shadow var(--time) var(--cubic);
 }
 
 .svg {
@@ -292,7 +291,7 @@ body . {
 .webstudio {
   min-height: 26px;
 
-  transition: color var(--duration) var(--timing-function);
+  transition: color var(--time) var(--cubic);
 }
 
 .white {
@@ -498,8 +497,8 @@ body .is-hidden {
   outline-offset: 0; /* small importance */ /* Нет сдвига рамки вокруг. Не влияет. */
   opacity: 0; /* only visual effect */ /* Контент прозрачный (не видно, но можно кликать и выделять). Контент и Блок в потоке. */
 
-  transition: visibility var(--duration) var(--timing-function),
-    opacity var(--duration) var(--timing-function); /* FIXME smooth fade */
+  transition: overflow var(--time) var(--cubic), visibility var(--time) var(--cubic),
+    opacity var(--time) var(--cubic), clip-path var(--time) var(--cubic); /* FIXME smooth fade */
 }
 /* END "СКРЫТЫЕ КЛАССЫ" */
 
@@ -580,7 +579,7 @@ main > .hero {
   border-radius: 4px; /* from btn--primary color: #ffffff; */
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15); /* Тень для Кнопки-героя (статическая) */
 
-  transition: background-color var(--duration) var(--timing-function);
+  transition: background-color var(--time) var(--cubic);
 }
 
 /* Hero-Button (Hover) */
@@ -854,7 +853,7 @@ main > .activities {
 
   border-radius: 50%;
 
-  transition: background-color var(--duration) var(--timing-function);
+  transition: background-color var(--time) var(--cubic);
 }
 
 .social-link:focus,
@@ -865,7 +864,7 @@ main > .activities {
 .social-icon {
   fill: var(--color-icon);
 
-  transition: currentColor var(--duration) var(--timing-function);
+  transition: currentColor var(--time) var(--cubic);
 }
 
 .social-link:hover .social-icon,
@@ -913,13 +912,13 @@ main > .activities {
   border-color: var(--color-icon);
   border-radius: 4px;
 
-  transition: border-color var(--duration) var(--timing-function);
+  transition: border-color var(--time) var(--cubic);
 }
 
 .client-icon {
   fill: var(--color-icon);
 
-  transition: fill var(--duration) var(--timing-function);
+  transition: fill var(--time) var(--cubic);
 }
 
 .client-link:hover,
@@ -1109,7 +1108,7 @@ main > .activities {
 .portfolio-project-link {
   display: block;
 
-  transition: box-shadow var(--duration) var(--timing-function);
+  transition: box-shadow var(--time) var(--cubic);
 }
 
 .portfolio-project-link:focus,
@@ -1157,8 +1156,7 @@ main > .activities {
   background-color: rgba(33, 150, 243, 0.9);
   opacity: 0;
 
-  transition: opacity var(--duration) var(--timing-function),
-    transform var(--duration) var(--timing-function);
+  transition: opacity var(--time) var(--cubic), transform var(--time) var(--cubic);
   transform: translateY(100%);
 }
 
@@ -1322,14 +1320,21 @@ main > .activities {
 
   min-width: 100vw;
   min-height: 100vh;
+  background-color: linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: scale var(--duration) var(--timing-function),
-    opacity var(--duration) var(--timing-function); /* FIXME smooth fade */
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic); /* FIXME smooth fade */
 }
+
+/* .backdrop:hover,
+.backdrop:focus,
+.backdrop:active {
+  background-color: linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+} */
 
 /* Form */
 .modal {
+  position: absolute;
   top: 50%;
   left: 50%;
 
@@ -1341,7 +1346,7 @@ main > .activities {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
     0 2px 1px rgba(0, 0, 0, 0.2);
 
-  transform: translate(50%, 50%);
+  transform: translate(-50%, -50%);
 }
 
 /* .contact-form-head {
