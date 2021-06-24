@@ -179,12 +179,6 @@ body . {
   transition: color var(--time) var(--cubic);
 }
 
-.btn-container {
-  position: relative;
-  overflow: hidden;
-  word-wrap: break-word;
-}
-
 /* Шаблон кнопки - "Все", "Веб-сайты", "Приложения", "Дизайн", "Маркетинг", h26px */
 .btn {
   display: inline-block;
@@ -370,7 +364,6 @@ body . {
   margin-right: 15px;
   margin-bottom: 10px;
   border: none;
-  object-fit: contain;
 
   color: var(--color-accent);
 
@@ -1320,7 +1313,8 @@ main > .activities {
 
   min-width: 100vw;
   min-height: 100vh;
-  background-color: linear-gradient(right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  /* FIXME */
+  background-color: rgba(0, 0, 0, 0.2);
 
   transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
     visibility var(--time) var(--cubic), background-color var(--time) var(--cubic); /* FIXME smooth fade */
@@ -1347,6 +1341,9 @@ main > .activities {
     0 2px 1px rgba(0, 0, 0, 0.2);
 
   transform: translate(-50%, -50%);
+
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
 }
 
 /* .contact-form-head {
@@ -1364,18 +1361,50 @@ main > .activities {
 }
 
 .modal-close-btn-container {
+  display: flex;
   justify-content: flex-end;
-  min-width: 100%;
-  min-height: fit-content;
-  padding-top: 10px;
-  padding-right: 40px;
+
+  margin-top: 8px;
+  margin-right: 8px;
 }
 
+/* Ellipse 1 */
 .modal-close-btn {
-  min-width: 30px; /* FIXME */
-  min-height: 30px; /* FIXME */
-  padding-right: 15px; /* FIXME */
-  text-align: center; /* FIXME */
+  object-fit: contain;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+
+  background-color: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.modal-close-btn:hover > .modal-close-icon,
+.modal-close-btn:focus > .modal-close-icon,
+.modal-close-btn:active > .modal-close-icon {
+  fill: var(--color-accent);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus,
+.modal-close-btn:active {
+  background-color: var(--color-white);
+  box-shadow: none;
 }
 
 .form-btn-container {
