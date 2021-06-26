@@ -32,3 +32,36 @@ html-css-22
 - Многослойная картинка с прозрачным градиентом.
 - Кнопка с иконкой, список с иконками (псевдоэлементы). [Допмат] (hhtps://habr.com/ru/post/154319/)
 - [Кнопка-иконка](https://moderncss.dev/icon-button-css-styling-guide/)
+
+html-css-22 Модуль 4. Вебинар №8. Векторная графика
+
+- SVG как img и background-image
+- Свойство fill
+- Inline SVG. Размеры, CSS fill и currentColor.
+- [stroke, width, linecap и dasharray] (http://css.yoksel.ru/svg-fill-and-stroke/)
+- SVG-спрайт, символы и идентификатор фрагмента
+- Иконошрифты
+- [кнопка-иконка](https://moderncss.dev/icon-button-css-styling-guide/)
+
+  1. export all svg from figma
+  2. insert icons to sprite at icomoon
+  3. import sprite to svgomg
+  4. then inserted as inline svg everywhere. End!
+
+<svg>
+  <use href="https://sprite.svg#fragment"
+  </use>
+</svg>
+
+Mission I'm possible for weekends - finish HW#6:
+
+1. смотреть записи. Done.
+2. делать себе спрайтики. TODO.
+3. ставить inline svg. TODO.
+4. удалить width, hight, fill. TODO.
+5. Изменяем currentColor через fill. TODO.
+
+backrgound-position: x смещение-x y смещение-y backrgound-position: right 30px bottom 20px;
+
+href="./contacts.html" https://www.google.com" https://developer.mozilla.org/ru/docs/web/css
+https://stackoverflow.com/questions/tagged/css
